@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'position-display',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./position-display.component.scss']
 })
 export class PositionDisplayComponent {
-
+  @Input() id: string = "";
+  @Input() name: string = "";
 }
