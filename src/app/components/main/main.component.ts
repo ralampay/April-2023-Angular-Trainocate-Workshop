@@ -13,4 +13,8 @@ export class MainComponent {
     { id: 4, name: "Position 4" },
     { id: 5, name: "Position 5" },
   ];
+
+  toggle(): void {
+    console.log("toggle() invoked");
+  }
 }
