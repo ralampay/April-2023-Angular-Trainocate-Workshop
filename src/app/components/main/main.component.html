@@ -6,10 +6,17 @@
     [isDisplay]="isDisplay"
 ></app-notification-modal>
 
+<div *ngIf="positions.length == 0">
+    <hr>
+        No items found
+    <hr>
+</div>
+
 <position-display
     *ngFor="let position of positions"
     [id]="position.id"
     [name]="position.name"
+    (deleteEvent)="handleDelete($event)"
 >
 </position-display>
 
@@ -23,6 +30,8 @@
 <hr>
 <button
     class="btn btn-danger w-100"
+    (click)="handleDeleteClicked()"
+    *ngIf="positions.length > 0"
 >
     Delete Item
 </button>

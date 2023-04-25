@@ -19,4 +19,14 @@ export class MainComponent {
     console.log("toggle() invoked");
     this.isDisplay = !this.isDisplay;
   }
+
+  handleDeleteClicked(): void {
+    console.log("handleDeleteClicked() invoked");
+    this.positions.shift();
+  }
+
+  handleDelete(payload: any): void {
+    console.log("handleDelete clicked");
+    console.log(`Deleting item with ID: ${payload.id} NAME: ${payload.name}`);
+  }
 }

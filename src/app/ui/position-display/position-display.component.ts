@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'position-display',
@@ -8,4 +8,12 @@ import { Component, Input } from '@angular/core';
 export class PositionDisplayComponent {
   @Input() id: string = "";
   @Input() name: string = "";
+
+  @Output() deleteEvent: EventEmitter<any> = new EventEmitter<any>();
+
+  handleDelete(): void {
+    console.log("Handle delete called");
+
+    this.deleteEvent.emit({ id: this.id, name: this.name });
+  }
 }
