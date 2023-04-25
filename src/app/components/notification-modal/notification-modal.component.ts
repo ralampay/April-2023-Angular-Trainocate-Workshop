@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./notification-modal.component.scss']
 })
 export class NotificationModalComponent {
-  styleModal: string = "modal display";
-  isDisplay: boolean = true;
+  isDisplay: boolean = false;
 }

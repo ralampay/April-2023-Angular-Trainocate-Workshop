@@ -1,4 +1,7 @@
-<div [ngClass]="isDisplay ? styleModal : 'modal'">
+<div 
+  class="modal display"
+  *ngIf="isDisplay"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

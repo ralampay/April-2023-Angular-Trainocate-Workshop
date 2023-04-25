@@ -2,22 +2,12 @@
     Main Content
 </h2>
 
-<app-notification-modal></app-notification-modal>
+<app-notification-modal
+></app-notification-modal>
 
 <position-display
-    [id]="'position-1'"
-    [name]="'Lead Dealer'"
->
-</position-display>
-
-<position-display
-    [id]="'position-2'"
-    [name]="'CEO'"
->
-</position-display>
-
-<position-display
-    [id]="'position-3'"
-    [name]="'Assistant Manager'"
+    *ngFor="let position of positions"
+    [id]="position.id"
+    [name]="position.name"
 >
 </position-display>
