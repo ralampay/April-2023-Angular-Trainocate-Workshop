@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
+  isDisplay: boolean = false;
   positions: any[] = [
     { id: 1, name: "Position 1" },
     { id: 2, name: "Position 2" },
@@ -16,5 +17,6 @@ export class MainComponent {
 
   toggle(): void {
     console.log("toggle() invoked");
+    this.isDisplay = !this.isDisplay;
   }
 }

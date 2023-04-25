@@ -3,6 +3,7 @@
 </h2>
 
 <app-notification-modal
+    [isDisplay]="isDisplay"
 ></app-notification-modal>
 
 <position-display
@@ -17,5 +18,5 @@
     class="btn btn-primary w-100"
     (click)="toggle()"
 >
-    Add Position
+    Toggle Modal
 </button>
