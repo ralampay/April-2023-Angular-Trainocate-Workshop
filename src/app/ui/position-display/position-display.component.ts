@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./position-display.component.scss']
 })
 export class PositionDisplayComponent {
-  @Input() id: string = "";
+  @Input() id: number | undefined;
   @Input() name: string = "";
 
   @Output() deleteEvent: EventEmitter<any> = new EventEmitter<any>();
