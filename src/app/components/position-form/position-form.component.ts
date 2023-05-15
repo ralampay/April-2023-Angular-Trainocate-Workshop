@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Category } from 'src/app/interfaces/category';
 import { Position } from 'src/app/interfaces/position';
 
 @Component({
@@ -12,6 +13,11 @@ export class PositionFormComponent {
     description: "",
   }
 
+  categories: Category[] = [
+    { id: 1, name: "Category A" },
+    { id: 2, name: "Category B" }
+  ]
+
   @Output() positionSaved: EventEmitter<Position> = new EventEmitter<Position>();
 
   handleSave(): void {
@@ -20,5 +26,8 @@ export class PositionFormComponent {
     const obj = {...this.position};
 
     this.positionSaved.emit(obj);
+
+    this.position.name = "";
+    this.position.description = "";
   }
 }

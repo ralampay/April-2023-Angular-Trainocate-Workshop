@@ -9,6 +9,7 @@ export class PositionDisplayComponent {
   @Input() id: number | undefined;
   @Input() name: string = "";
   @Input() description: string | undefined;
+  @Input() categoryId: number | undefined;
 
   @Output() deleteEvent: EventEmitter<any> = new EventEmitter<any>();
 

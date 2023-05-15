@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Position } from 'src/app/interfaces/position';
+import { PositionsService } from 'src/app/services/positions.service';
 
 @Component({
   selector: 'main',
@@ -8,14 +9,15 @@ import { Position } from 'src/app/interfaces/position';
 })
 export class MainComponent {
   isDisplay: boolean = false;
-  positions: Position[] = [
-    { id: 1, name: "Position 1" },
-    { id: 2, name: "Position 2" },
-    { id: 3, name: "Position 3" },
-    { id: 4, name: "Position 4" },
-    { id: 5, name: "Position 5" },
-    { id: 6, name: "Position 6", description: "something" },
-  ];
+  positions: Position[] = [];
+
+  constructor(private positionService: PositionsService) {}
+
+  ngOnInit(): void {
+    this.positionService.getAll().subscribe((positions) => {
+      this.positions = positions;
+    })
+  }
 
   position: Position = {
     name: "", 
@@ -35,6 +37,9 @@ export class MainComponent {
   handlePositionSaved(position: Position) {
     console.log("Inside main component");
     console.log(position);
+
+    position.id = 7;
+    this.positions.push(position);
   }
 
   handleDelete(payload: any): void {

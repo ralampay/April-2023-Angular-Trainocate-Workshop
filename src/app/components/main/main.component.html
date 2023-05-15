@@ -22,6 +22,7 @@
     *ngFor="let position of positions"
     [id]="position.id"
     [name]="position.name"
+    [categoryId]="position.categoryId"
     [description]="position.description"
     (deleteEvent)="handleDelete($event)"
 >
