@@ -17,6 +17,11 @@ export class MainComponent {
     { id: 6, name: "Position 6", description: "something" },
   ];
 
+  position: Position = {
+    name: "", 
+    description: ""
+  }
+
   toggle(): void {
     console.log("toggle() invoked");
     this.isDisplay = !this.isDisplay;

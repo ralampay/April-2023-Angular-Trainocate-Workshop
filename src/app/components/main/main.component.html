@@ -2,6 +2,11 @@
     Main Content
 </h2>
 
+<app-position-form
+    [position]="position"
+>
+</app-position-form>
+
 <app-notification-modal
     [isDisplay]="isDisplay"
 ></app-notification-modal>
@@ -16,6 +21,7 @@
     *ngFor="let position of positions"
     [id]="position.id"
     [name]="position.name"
+    [description]="position.description"
     (deleteEvent)="handleDelete($event)"
 >
 </position-display>

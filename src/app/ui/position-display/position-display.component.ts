@@ -8,6 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class PositionDisplayComponent {
   @Input() id: number | undefined;
   @Input() name: string = "";
+  @Input() description: string | undefined;
 
   @Output() deleteEvent: EventEmitter<any> = new EventEmitter<any>();
 

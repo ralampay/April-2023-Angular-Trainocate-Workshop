@@ -6,6 +6,8 @@ import { HeaderComponent } from './ui/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { PositionDisplayComponent } from './ui/position-display/position-display.component';
 import { NotificationModalComponent } from './components/notification-modal/notification-modal.component';
+import { PositionFormComponent } from './components/position-form/position-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { NotificationModalComponent } from './components/notification-modal/noti
     HeaderComponent,
     MainComponent,
     PositionDisplayComponent,
-    NotificationModalComponent
+    NotificationModalComponent,
+    PositionFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
