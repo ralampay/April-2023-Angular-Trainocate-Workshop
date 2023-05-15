@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Position } from 'src/app/interfaces/position';
 
 @Component({
@@ -10,5 +10,15 @@ export class PositionFormComponent {
   @Input() position: Position = {
     name: "",
     description: "",
+  }
+
+  @Output() positionSaved: EventEmitter<Position> = new EventEmitter<Position>();
+
+  handleSave(): void {
+    console.log(this.position);
+
+    const obj = {...this.position};
+
+    this.positionSaved.emit(obj);
   }
 }

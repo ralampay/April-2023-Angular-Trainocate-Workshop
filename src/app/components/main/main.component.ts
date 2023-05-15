@@ -32,6 +32,11 @@ export class MainComponent {
     this.positions.shift();
   }
 
+  handlePositionSaved(position: Position) {
+    console.log("Inside main component");
+    console.log(position);
+  }
+
   handleDelete(payload: any): void {
     console.log("handleDelete clicked");
     console.log(`Deleting item with ID: ${payload.id} NAME: ${payload.name}`);
